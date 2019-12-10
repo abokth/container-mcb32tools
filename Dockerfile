@@ -8,5 +8,5 @@ RUN mkdir -p /opt/mcb32tools/src
 RUN cd /opt/mcb32tools/src && wget https://github.com/is1200-example-projects/mcb32tools/archive/master.zip
 RUN cd /opt/mcb32tools/src && unzip master.zip
 RUN cd /opt/mcb32tools/src/mcb32tools-master && make install
-RUN tar -zcf /opt/mcb32tools.tar.gz /opt/mcb32tools
+RUN tar -zcf /opt/mcb32tools.tar.gz -C /opt/mcb32tools .
 RUN yum -y remove dbus-glib
