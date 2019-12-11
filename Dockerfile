@@ -7,8 +7,8 @@ RUN yum -y install @development bison flex libtool texinfo zlib-devel m4 libftdi
 RUN yum -y update
 RUN yum clean all
 RUN mkdir -p /opt/mcb32tools/src
-RUN cd /opt/mcb32tools/src && wget -O mcbtools-2.2.zip https://github.com/is1200-example-projects/mcb32tools/archive/v2.2.zip
-RUN cd /opt/mcb32tools/src && unzip mcbtools-2.2.zip
+RUN cd /opt/mcb32tools/src && wget -O mcb32tools-2.2.zip https://github.com/is1200-example-projects/mcb32tools/archive/v2.2.zip
+RUN cd /opt/mcb32tools/src && unzip mcb32tools-2.2.zip
 RUN cd /opt/mcb32tools/src/mcb32tools-2.2 && make
 RUN tar -zcf /opt/mcb32tools-bin-2.2.tar.gz -C /opt/mcb32tools .
 RUN yum -y remove dbus-glib
